@@ -125,16 +125,15 @@
     $('.tree-toy').click(function (e) {
       e.stopPropagation();
       if(window.matchMedia("(min-width: 768px)").matches){
+        var posX, posY;
         if($(this).hasClass('tree-toy--one')){
-          var posX = parseInt($(this).offset().left + ($(this).width() / 2)) - ($('.tree-card').outerWidth()/2);
-          var posY = parseInt($(this).offset().top + ($(this).height()+14));
+          posX = parseInt($(this).offset().left + ($(this).width() / 2)) - ($('.tree-card').outerWidth()/2);
+          posY = parseInt($(this).offset().top + ($(this).height()+14));
         }else {
-          var posX = parseInt($(this).offset().left - 307);
-          var posY = parseInt($(this).offset().top);
+          posX = parseInt($(this).offset().left - 307);
+          posY = parseInt($(this).offset().top);
         }
         $('.tree-card').css({'top':posY+'px','left':posX+'px'});
-      }else {
-
       }
       $('.tree-card__title').html(cardTexts[parseInt($(this).index())-1].title);
       $('.tree-card__text').text(cardTexts[parseInt($(this).index())-1].text);
