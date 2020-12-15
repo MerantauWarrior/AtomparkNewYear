@@ -25,6 +25,7 @@ a, svg{
     transition: all 0.25s;
 }
 .wrapper{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -107,6 +108,7 @@ a, svg{
     cursor: pointer;
 }
 .tree-toy__text{
+    margin-top: 10px;
     font-weight: 700;
     font-size: 30px;
     line-height: 1em;
@@ -192,7 +194,6 @@ a, svg{
     transform: rotate(15deg);
 }
 .tree-toy--five .tree-toy__text{
-    margin-top: 10px;
     font-size: 24px;
     -webkit-transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -202,7 +203,7 @@ a, svg{
 }
 /*Tree card*/
 .tree-card{
-    /*display: flex;*/
+    position: absolute;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -218,6 +219,9 @@ a, svg{
     filter: drop-shadow(-4px 4px 20px rgba(66, 72, 95, 0.25));
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
+}
+.tree-card_visible{
+    display: flex;
 }
 .tree-card__title{
     margin-bottom: 15px;
@@ -306,5 +310,14 @@ a, svg{
         -ms-transform: translate(-50%, -65%) scale(0.7);
         -o-transform: translate(-50%, -65%) scale(0.7);
         transform: translate(-50%, -65%) scale(0.7);
+    }
+    .tree-card_visible{
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
 }
